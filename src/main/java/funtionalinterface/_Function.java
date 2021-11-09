@@ -16,13 +16,13 @@ public class _Function {
         int multiply = incrementByOneAndMultiplyBiFunction.apply(3, 10);
         System.out.println(multiply);
 
-        System.out.println(incrementByOneFunction.andThen(multiblyBy10).apply(7));
-        System.out.println(incrementByOneFunction.andThen(multiblyBy10).andThen(divideBy12).apply(7));
+        System.out.println(incrementByOneFunction.andThen(multiplyBy10).apply(7));
+        System.out.println(incrementByOneFunction.andThen(multiplyBy10).andThen(divideBy12).apply(7));
     }
 
     static Function<Integer, Integer> incrementByOneFunction = number -> number + 1;
 
-    static Function<Integer, Integer> multiblyBy10 = number -> number * 10;
+    static Function<Integer, Integer> multiplyBy10 = number -> number * 10;
 
     static Function<Integer, Double> divideBy12 = number -> number/ 12.0;
 
