@@ -1,5 +1,6 @@
 package funtionalinterface;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
@@ -11,9 +12,16 @@ public class _Function {
         System.out.println(increment);
         Integer integer = incrementByOneFunction.apply(3);
         System.out.println(integer);
+
+        int multiply = incrementByOneAndMultiplyBiFunction.apply(3, 10);
+        System.out.println(multiply);
     }
 
     static Function<Integer, Integer> incrementByOneFunction = number -> number + 1;
+
+    static BiFunction<Integer, Integer, Integer> incrementByOneAndMultiplyBiFunction = (numberToIncrementByOne, numberToMultiplyBy) -> (numberToIncrementByOne + 1) * numberToMultiplyBy;
+
+    static Function<Integer, Integer> multiplyByTenFunction = number -> number * 10;
 
     static int increment(int number) {
         return number + 1;
