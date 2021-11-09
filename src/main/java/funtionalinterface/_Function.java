@@ -21,8 +21,6 @@ public class _Function {
 
     static BiFunction<Integer, Integer, Integer> incrementByOneAndMultiplyBiFunction = (numberToIncrementByOne, numberToMultiplyBy) -> (numberToIncrementByOne + 1) * numberToMultiplyBy;
 
-    static Function<Integer, Integer> multiplyByTenFunction = number -> number * 10;
-
     static int increment(int number) {
         return number + 1;
     }
