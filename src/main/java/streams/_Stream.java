@@ -1,6 +1,7 @@
 package streams;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import static streams._Stream.Gender.*;
 
@@ -24,10 +25,36 @@ public class _Stream {
                 //.collect(Collectors.toSet())
 //                .forEach(System.out::println);
 
-        boolean allFemale = people.stream()
-                .noneMatch(person -> NON_BINARY.equals(person.gender));
+//        boolean allFemale = people.stream()//               .noneMatch(person -> NON_BINARY.equals(person.gender));
                 //.allMatch(person -> FEMALE.equals(person.gender));
-        System.out.println(allFemale);
+//        System.out.println(allFemale);
+
+        //1. Integer Stream
+        /*
+        IntStream
+                .range(1, 10)
+                .forEach(System.out::println);
+         */
+
+        //2. Integer Stream with skip
+        /*IntStream
+                .range(1, 10)
+                .skip(5)
+                .forEach(System.out::print);
+         */
+
+        //3. Integer Stream with sum
+        /*int sum = IntStream
+                .range(1, 10)
+                .sum();
+        System.out.println(sum);?
+         */
+
+        //4. Stream of, sorted, findFirst
+        Stream.of("Ava", "Aneri", "Alberto")
+                .sorted()
+                .findFirst()
+                .ifPresent(System.out::println);
     }
 
     static class Person {
